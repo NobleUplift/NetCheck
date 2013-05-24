@@ -61,7 +61,7 @@ while $LOOP; do
 		if [ $DIFF -gt $FLUX ]; then
 			echo "$DOWNTIME--$UPTIME" >> $FILE
 		else
-			echo "$DOWNTIME Downtime of $DIFF seconds skipped for being <= $FLUX." >> $ROOT$LOG
+			echo "$UPTIME Downtime of $DIFF seconds skipped for being <= $FLUX." >> $ROOT$LOG
 		fi
 		#echo "Added downtime $DOWNTIME--$UPTIME to $FILE." >> "$ROOT/$LOG"
 		LOOP=false
