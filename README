@@ -1,0 +1,27 @@
+Installation Instructions
+Windows
+1. Place NetCheck.bat in the HOME folder specified by the script (you can change it).
+2. Open Task Scheduler (Control Panel\All Control Panel Items\Administrative Tools).
+3. In the root of Task Scheduler Library, click Create Task.
+4. Name the task NetCheck.
+5. Go to Triggers and create a new trigger.
+6. Set the repetition to daily, check "Repeat task every" 5 minutes "for a duration of" 1 day.
+7. Go to Actions and create a new action.
+8. Start a program and Browse... to the location of NetCheck.bat, and you're done!
+
+Linux
+1. Place netcheck.sh in the ROOT folder specified by the script (you can change it).
+2. Type `crontab -e` in a terminal and add the following to it:
+
+*/5 * * * * ~/netcheck/netcheck.sh
+
+The /5 designates that netcheck will run every 5 minutes.
+Depending on your average length of failure, you may need to decrease your time.
+If it does not run, you may have to use the full path of your home directory.
+You may also have to place variables at the top of your crontab:
+
+SHELL=/bin/bash
+PATH=/bin:/usr/bin:/usr/local/bin
+*/3 * * * * /home/You/netcheck/netcheck.sh
+
+3. Done!
