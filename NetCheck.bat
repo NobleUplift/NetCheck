@@ -16,11 +16,10 @@ SET ISDOWN=FALSE
 :: Migrate script
 IF NOT EXIST %HOME% MKDIR %HOME%
 IF NOT %0==%HOME%%~n0%~x0 (
-	REM PAUSE
+	PAUSE
 	MOVE /Y %0 %HOME%%~n0%~x0
 	START %HOME%%~n0%~x0
-	GOTO :EOF
-	REM DEL %0
+	EXIT /B
 )
 
 :: If lock file exists, exit
